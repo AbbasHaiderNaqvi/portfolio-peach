@@ -520,13 +520,14 @@ function HeroSection() {
             </div>
 
             {/* Headline */}
-            <div
+            {/* <div
               style={{
                 opacity: lineVisible ? 1 : 0,
                 transform: lineVisible ? 'translateY(0)' : 'translateY(32px)',
                 transition: 'opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s',
               }}
             >
+              
               <h1 className="font-serif text-[2.6rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[5.25rem] font-bold text-foreground">
                 <ScrambleText text="Design" className="block" />
                 <span
@@ -541,9 +542,44 @@ function HeroSection() {
                 </span>
                 <span className="text-foreground/15 block">loudly.</span>
               </h1>
+            </div> */}
+            <div
+              style={{
+                opacity: lineVisible ? 1 : 0,
+                transform: lineVisible ? 'translateY(0)' : 'translateY(32px)',
+                transition: 'opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s',
+              }}
+            >
+              <h1 className="font-serif text-[2.0rem] leading-[1.00] sm:text-3xl md:text-4xl lg:text-[4rem] font-bold text-foreground">
+                <ScrambleText
+                  text="Your brand gets"
+                  className="block whitespace-nowrap"
+                />
+
+                <span
+                  className="text-primary block whitespace-nowrap"
+                  style={{
+                    transform: mounted
+                      ? `translate(${mouse.x * -12}px, ${mouse.y * -6}px)`
+                      : 'none',
+                    transition: 'none',
+                  }}
+                >
+                  one chance
+                </span>
+
+                <span className="text-foreground/15 block whitespace-nowrap">
+                  to make a first impression
+                </span>
+
+              </h1>
             </div>
 
             {/* Body */}
+            {/* I'm Ramsha Ali, a Top Rated brand identity specialist with 7+ 
+            years of experience building premium, strategic brand systems for founders, 
+            startups, and growing businesses worldwide. */}
+
             <div
               style={{
                 opacity: lineVisible ? 1 : 0,
@@ -552,7 +588,7 @@ function HeroSection() {
               }}
             >
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg">
-                I&apos;m <strong className="text-foreground font-semibold">Ramsha Ali</strong>, a graphic designer crafting brand identities, digital experiences, and visual stories that connect with people.
+                I&apos;m <strong className="text-foreground font-semibold">Ramsha Ali,</strong>, a Top Rated brand identity specialist with 7+ years of experience building premium, strategic brand systems for founders, startups, and growing businesses worldwide.
               </p>
             </div>
 
@@ -590,9 +626,9 @@ function HeroSection() {
               }}
             >
               {[
-                { val: 5, suf: '+', label: 'Years Exp.' },
-                { val: 80, suf: '+', label: 'Projects' },
-                { val: 50, suf: '+', label: 'Clients' },
+                { val: 7, suf: '+', label: 'Years Exp.' },
+                { val: 700, suf: '+', label: 'Projects' },
+                { val: 351, suf: '+', label: 'Clients' },
               ].map((s) => (
                 <div key={s.label} className="group cursor-default">
                   <p className="font-serif text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
@@ -630,7 +666,7 @@ function HeroSection() {
               <div className="absolute -top-5 -right-5 bg-primary text-primary-foreground rounded-2xl px-4 py-3 shadow-xl animate-float">
                 <div className="flex items-center gap-1.5 text-sm font-bold">
                   <Star size={12} fill="currentColor" />
-                  Top Rated
+                  Top Rated on Upwork
                 </div>
               </div>
 
@@ -641,8 +677,8 @@ function HeroSection() {
                   transform: mounted ? `translate(${mouse.x * 14}px, ${mouse.y * 14}px)` : 'none',
                 }}
               >
-                <p className="text-xs text-muted-foreground">Latest</p>
-                <p className="font-semibold text-sm text-foreground">Lumina Brand Identity</p>
+                <p className="text-xs text-muted-foreground">700+ Projects</p>
+                <p className="font-semibold text-sm text-foreground">100% Satisfaction</p>
               </div>
             </TiltCard>
 
@@ -684,12 +720,18 @@ function HeroSection() {
         <div className="animate-marquee">
           {Array(4).fill(null).map((_, i) => (
             <span key={i} className="flex items-center gap-8 pr-8 text-xs font-semibold text-muted-foreground uppercase tracking-widest whitespace-nowrap">
+              Logo Design <span className="text-primary text-base leading-none">✦</span>
               Brand Identity <span className="text-primary text-base leading-none">✦</span>
-              UI/UX Design <span className="text-primary text-base leading-none">✦</span>
+              Brand Guidelines <span className="text-primary text-base leading-none">✦</span>
+              Brand Strategy <span className="text-primary text-base leading-none">✦</span>
               Packaging Design <span className="text-primary text-base leading-none">✦</span>
-              Editorial Design <span className="text-primary text-base leading-none">✦</span>
-              Motion Graphics <span className="text-primary text-base leading-none">✦</span>
-              Social Media <span className="text-primary text-base leading-none">✦</span>
+              Brand Book <span className="text-primary text-base leading-none">✦</span>
+              E-Book Design <span className="text-primary text-base leading-none">✦</span>
+              Social Media Kit<span className="text-primary text-base leading-none">✦</span>
+              Stationery Design<span className="text-primary text-base leading-none">✦</span>
+              Flyer & Banner Design <span className="text-primary text-base leading-none">✦</span>
+              Pitch Deck <span className="text-primary text-base leading-none">✦</span>
+              Book Cover Design <span className="text-primary text-base leading-none">✦</span>
             </span>
           ))}
         </div>
@@ -703,12 +745,12 @@ function HeroSection() {
 ───────────────────────────────────────────────────────────── */
 function ServicesSection() {
   const services = [
-    { title: 'Brand Identity', desc: 'Complete visual systems — from logo to brand guidelines — that tell your story.', icon: '◈', n: '01' },
-    { title: 'UI/UX Design', desc: 'Intuitive digital interfaces that delight users and drive business results.', icon: '⬡', n: '02' },
-    { title: 'Packaging Design', desc: 'Shelf-ready packaging that communicates quality and drives purchase decisions.', icon: '◉', n: '03' },
-    { title: 'Editorial Design', desc: 'Layouts and art direction for magazines, reports, and printed publications.', icon: '▣', n: '04' },
-    { title: 'Motion Graphics', desc: 'Animated content that brings your brand to life across video and digital media.', icon: '◌', n: '05' },
-    { title: 'Social Media', desc: 'Content systems and templates that keep your digital presence consistent.', icon: '◈', n: '06' },
+    { title: 'Logo Design', desc: ' Logo Design Custom, scalable logos built for recognition, trust and lasting impact.', icon: '◈', n: '01' },
+    { title: 'Brand Guidelines', desc: 'Brand Guidelines Complete brand books that define your visual DNA including typography, color, spacing and usage rules.', icon: '⬡', n: '02' },
+    { title: 'E-Book Design', desc: 'E-Book Design Beautifully structured e-books and digital publications that are as readable as they are stunning.', icon: '◉', n: '03' },
+    { title: 'Packaging Design', desc: 'Packaging Design Shelf-ready packaging that communicates quality and drives purchase decisions.', icon: '▣', n: '04' },
+    { title: 'Pitch Deck', desc: 'Pitch Deck Investor-ready decks that tell your story clearly, confidently and visually.', icon: '◌', n: '05' },
+    { title: 'Apparel Graphics', desc: 'Apparel Graphics Bold, print-ready graphics for t-shirts, merch and branded apparel.', icon: '◈', n: '06' },
   ]
 
   return (
@@ -734,7 +776,7 @@ function ServicesSection() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="group relative p-8 rounded-2xl border border-border hover:border-primary/40 bg-card hover:bg-accent/30 transition-all duration-500 cursor-default overflow-hidden"
+              className="group relative p-8 h-[260px] rounded-2xl border border-border hover:border-primary/40 bg-card hover:bg-accent/30 transition-all duration-500 cursor-default overflow-hidden flex flex-col"
               data-hover
             >
               {/* Number watermark */}
@@ -842,7 +884,7 @@ function FeaturedWork() {
 function AboutSection() {
   const mouse = useMouseLerp(0.05)
   const [mounted, setMounted] = useState(false)
-  const skills = ['Adobe Illustrator', 'Figma', 'Photoshop', 'After Effects', 'InDesign', 'Dimension', 'Brand Strategy', 'Typography']
+  const skills = ['Adobe Illustrator', 'Figma', 'Photoshop', 'After Effects', 'InDesign', 'Canva']
 
   useEffect(() => { setMounted(true) }, [])
 
@@ -901,17 +943,17 @@ function AboutSection() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="text-muted-foreground leading-relaxed">
-                With over 5 years of experience in graphic design, I specialize in creating meaningful brand experiences that connect businesses with their audiences. My work spans brand identity, digital product design, packaging, and motion.
+                I'm Ramsha Ali, a Top Rated brand identity designer based in Bradford, UK, with 7+ years of experience building premium visual systems for founders, startups, and established businesses worldwide. I don't just design logos. I build complete brand identities that look intentional, feel premium, and scale with growth. On Upwork, I've successfully completed 350+ projects, earned a Top Rated badge with 91% Job Success, and built a reputation for delivering premium quality with clear communication and fast turnaround. With 700+ projects delivered across global platforms, I bring both creative precision and strategic thinking to every brief. I work with industry-leading tools including Adobe Illustrator, Photoshop, InDesign, Figma, and Canva, delivering polished, production-ready files every time
               </p>
             </Reveal>
-            <Reveal delay={0.15}>
+            {/* <Reveal delay={0.15}>
               <p className="text-muted-foreground leading-relaxed">
                 I believe great design is both beautiful and purposeful. Every project begins with deep understanding — of the business, the audience, and the desired outcome.
               </p>
-            </Reveal>
+            </Reveal> */}
 
             {/* Skills — staggered */}
-            <Stagger className="flex flex-wrap gap-2" baseDelay={0.1} step={0.05}>
+            <Stagger className="flex flex-wrap gap-x-2 gap-y-6" baseDelay={0.1} step={0.05}>
               {skills.map((skill) => (
                 <span
                   key={skill}
@@ -943,10 +985,10 @@ function AboutSection() {
 ───────────────────────────────────────────────────────────── */
 function ProcessStrip() {
   const steps = [
-    { n: '01', title: 'Discover', desc: 'Research, brand audit, competitor analysis and stakeholder interviews.' },
-    { n: '02', title: 'Define', desc: 'Strategy, positioning, creative direction and concept development.' },
-    { n: '03', title: 'Design', desc: 'Iterative visual explorations, prototypes, and refinements.' },
-    { n: '04', title: 'Deliver', desc: 'Final assets, guidelines, and ongoing support for implementation.' },
+    { n: '01', title: 'Discover', desc: 'Discover Deep dive into your brand, audience, competitors and goals to build a solid strategic foundation.' },
+    { n: '02', title: 'Define', desc: 'Define Creative direction, visual strategy and concept development tailored to your brand positioning.' },
+    { n: '03', title: 'Design', desc: 'Design Iterative design explorations, revisions and refinements until every detail is exactly right.' },
+    { n: '04', title: 'Deliver', desc: 'Deliver Final production ready files, brand guidelines and ongoing support for seamless implementation.' },
   ]
 
   return (
@@ -989,9 +1031,9 @@ function ProcessStrip() {
 ───────────────────────────────────────────────────────────── */
 function TestimonialsSection() {
   const testimonials = [
-    { name: 'Sarah Chen', role: 'CEO, Lumina Skincare', text: 'Ramsha completely transformed our brand. The new identity has elevated how we\'re perceived in the market. Every touchpoint now feels premium and intentional.', rating: 5 },
-    { name: 'James Okafor', role: 'Product Lead, Pulse Health', text: 'Working with Ramsha was seamless. She understood our users deeply and translated that into a UI customers love. App store ratings went from 3.1 to 4.8.', rating: 5 },
-    { name: 'Marie Leclerc', role: 'Creative Director, Aura Magazine', text: 'Ramsha\'s art direction for our spring issue was outstanding. A rare ability to balance editorial vision with commercial reality.', rating: 5 },
+    { name: 'Justin Mays', role: 'CEO, Lumina Skincare',work: 'Complete Brand Setup', text: 'Ramsha has been an absolute pleasure to work with. She is thoughtful, responsive, and incredibly detail-oriented. She took the time to truly understand my vision and translated it into clean, professional design work that exceeded my expectations. Communication was clear and timely throughout the entire process, and revisions were handled quickly and thoughtfully. I would not hesitate to work with Ramsha again and would highly recommend her to anyone looking for reliable, high-quality creative work.', rating: 5 },
+    { name: 'Brandon Sturgill', role: 'Product Lead, Pulse Health ', work: 'Logo and Brand Guidelines', text: 'Ramsha completed our re-branding project within budget and on-time with fantastic results. We would highly recommend exploring her design services if you are looking to create, refresh or redo your company branding!', rating: 5 },
+    { name: 'Manthias Fisker', role: 'Creative Director, Aura Magazine', work: 'Brand Logo and Brand Strategy', text: 'Ramsha is a consummate professional and working with her was a pleasure. She asked excellent questions at the start and helped me identify what I really wanted. Ramsha brought a little humor to my logo that I didn\'t expect but appreciate!', rating: 5 },
   ]
 
   return (
@@ -1002,20 +1044,36 @@ function TestimonialsSection() {
           <h2 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mt-3">What clients say</h2>
         </Reveal>
 
-        <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6" baseDelay={0.05} step={0.12}>
+        <Stagger
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch"
+          baseDelay={0.05}
+          step={0.12}
+        >
           {testimonials.map((t) => (
             <TiltCard
               key={t.name}
               depth={4}
-              className="bg-card rounded-3xl p-8 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-default"
+              className="bg-card rounded-3xl p-8 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 cursor-default h-full flex flex-col"
             >
-              <div className="flex gap-1 mb-6">
+              {/* Rating */}
+              <div className="flex gap-1 mb-3">
                 {Array(t.rating).fill(null).map((_, i) => (
                   <Star key={i} size={13} className="text-primary fill-primary" />
                 ))}
               </div>
-              <p className="text-foreground leading-relaxed mb-8 italic text-[0.95rem]">&ldquo;{t.text}&rdquo;</p>
-              <div className="flex items-center gap-3">
+
+              {/* Subheading: What you did for the client */}
+              <p className="text-primary font-semibold text-sm mb-4">
+                {t.work}
+              </p>
+
+              {/* Testimonial text */}
+              <p className="text-foreground leading-relaxed mb-8 italic text-[0.95rem]">
+                &ldquo;{t.text}&rdquo;
+              </p>
+
+              {/* Author info */}
+              <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm shrink-0">
                   {t.name[0]}
                 </div>
@@ -1063,7 +1121,7 @@ function CTASection() {
             Have a project<br />in mind?
           </h2>
           <p className="text-white/45 text-lg leading-relaxed max-w-xl mx-auto mb-12">
-            I&apos;m available for freelance projects, brand consultations, and full-time opportunities. Let&apos;s create something remarkable together.
+            I am available for freelance projects and brand consultations. Whether you need a complete brand identity, a standout logo, or a polished brand book, I bring strategy, precision and creativity to every project. Let's create something remarkable together. Connect with me on Upwork and let's get started.
           </p>
         </Reveal>
 
@@ -1073,7 +1131,7 @@ function CTASection() {
             className="items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:bg-[var(--brand-coral-deep)] transition-colors shadow-xl shadow-primary/30"
             strength={0.25}
           >
-            Start a conversation <ArrowRight size={18} />
+            Let’s Connect on upwork <ArrowRight size={18} />
           </MagneticBtn>
           <MagneticBtn
             href="/case-studies"

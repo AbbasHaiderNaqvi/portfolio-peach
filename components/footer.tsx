@@ -22,14 +22,14 @@ export default function Footer() {
                 <li><Link href="/case-studies" className="text-white/60 hover:text-primary transition-colors">Case Studies</Link></li>
               </ul>
             </div>
-            <div>
+            {/* <div>
               <p className="font-semibold text-white/30 uppercase tracking-widest text-xs mb-4">Connect</p>
               <ul className="space-y-3">
                 <li><a href="#" className="text-white/60 hover:text-primary transition-colors">Instagram</a></li>
                 <li><a href="#" className="text-white/60 hover:text-primary transition-colors">Dribbble</a></li>
                 <li><a href="mailto:ramsha@example.com" className="text-white/60 hover:text-primary transition-colors">Email</a></li>
               </ul>
-            </div>
+            </div> */}
           </div>
 
           <div>
@@ -45,12 +45,12 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 text-xs text-white/30">
           <p>© 2026 Ramsha Ali. All rights reserved.</p>
-          <div className="flex items-center gap-5">
+          {/* <div className="flex items-center gap-5">
             <a href="#" aria-label="Instagram" className="hover:text-primary transition-colors"><Instagram size={16} /></a>
             <a href="#" aria-label="Twitter" className="hover:text-primary transition-colors"><Twitter size={16} /></a>
             <a href="#" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin size={16} /></a>
             <a href="#" aria-label="Dribbble" className="hover:text-primary transition-colors"><Dribbble size={16} /></a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
