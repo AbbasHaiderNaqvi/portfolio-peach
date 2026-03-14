@@ -69,24 +69,30 @@ export default async function ProjectPage({ params }: Props) {
           </div>
 
           {/* Hero image */}
-          <div className="relative w-full aspect-[21/9] overflow-hidden">
-            <Image src={project.image} alt={project.title} fill className="object-cover" priority />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+          <div className="w-[60%] mx-auto rounded-4xl overflow-hidden">
+            <Image
+              src={project.cover}
+              alt={project.title}
+              width={1600}
+              height={2000}
+              className="w-full h-auto"
+              priority
+            />
           </div>
         </section>
 
         {/* Content */}
-        <section className="py-20 bg-background">
+        {/* <section className="py-20 bg-background">
           <div className="max-w-4xl mx-auto px-6">
             <div className="grid md:grid-cols-3 gap-12">
-              <div className="md:col-span-2 space-y-8">
-                <div>
+              <div className="md:col-span-2 space-y-8"> */}
+        {/* <div>
                   <h2 className="font-serif text-3xl font-bold text-foreground mb-4">About the project</h2>
                   <p className="text-muted-foreground leading-relaxed text-lg">{project.longDescription}</p>
-                </div>
+                </div> */}
 
-                {/* Outcomes */}
-                <div>
+        {/* Outcomes */}
+        {/* <div>
                   <h2 className="font-serif text-3xl font-bold text-foreground mb-6">Outcomes</h2>
                   <ul className="space-y-3">
                     {project.outcomes.map((outcome) => (
@@ -98,11 +104,11 @@ export default async function ProjectPage({ params }: Props) {
                       </li>
                     ))}
                   </ul>
-                </div>
-              </div>
+                </div> */}
+        {/* </div> */}
 
-              {/* Tools sidebar */}
-              <div>
+        {/* Tools sidebar */}
+        {/* <div>
                 <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-widest">Tools used</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
@@ -118,13 +124,13 @@ export default async function ProjectPage({ params }: Props) {
                     Hire me <ArrowRight size={14} />
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
+              </div> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* </section> */}
 
         {/* Gallery */}
-        {project.gallery.length > 0 && (
+        {/* {project.gallery.length > 0 && (
           <section className="pb-20 bg-background">
             <div className="max-w-7xl mx-auto px-6">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Gallery</h2>
@@ -137,7 +143,7 @@ export default async function ProjectPage({ params }: Props) {
               </div>
             </div>
           </section>
-        )}
+        )} */}
 
         {/* More projects */}
         <section className="py-20 bg-[var(--brand-cream)] border-t border-border">
@@ -146,7 +152,7 @@ export default async function ProjectPage({ params }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {others.map((p) => (
                 <Link key={p.id} href={`/portfolio/${p.id}`} className="group relative rounded-3xl overflow-hidden aspect-video block" data-hover>
-                  <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  {/* <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" /> */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="text-xs font-semibold uppercase tracking-widest text-white/60">{p.category}</span>

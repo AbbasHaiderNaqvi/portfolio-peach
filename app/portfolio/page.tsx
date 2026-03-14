@@ -73,7 +73,7 @@ export default function PortfolioPage() {
                   data-hover
                 >
                   <Image
-                    src={project.image}
+                    src={project.thumbnail}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
