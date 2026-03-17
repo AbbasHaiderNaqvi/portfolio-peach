@@ -22,8 +22,8 @@ export default async function CaseStudyPage({ params }: Props) {
   return (
     <>
       <Navigation />
-      <main>
-        {/* Hero */}
+      <main className="overflow-x-hidden">
+        {/* Hero Section */}
         <section className="pt-28 bg-[var(--brand-cream)]">
           <div className="max-w-7xl mx-auto px-6 pb-12">
             <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
@@ -52,46 +52,51 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Key results */}
+        {/* Key Results Boxes (Width: 1400px) */}
         <section className="py-16 bg-background">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="max-w-[1400px] mx-auto px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {cs.results.map((r) => (
-                <div key={r.label} className="bg-[var(--brand-cream)] rounded-3xl p-8 border border-border text-center">
-                  <p className="font-serif text-4xl font-bold text-primary">{r.value}</p>
-                  <p className="text-sm text-muted-foreground mt-2">{r.label}</p>
+                <div key={r.label} className="bg-[#f4f7f4] rounded-[2.5rem] p-8 md:p-10 border border-black/5 flex flex-col items-center justify-center text-center min-h-[180px]">
+                  <p className="font-serif font-bold text-[#00853E] leading-tight whitespace-nowrap text-[clamp(1.1rem,1.8vw,1.75rem)]">
+                    {r.value}
+                  </p>
+                  <p className="text-base font-medium text-[#6B7280] mt-4">
+                    {r.label}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Main content */}
+        {/* Main Content (Challenge/Approach) - Now matches Box Width (1400px) */}
         <section className="py-12 bg-background">
-          <div className="max-w-4xl mx-auto px-6 space-y-16">
-            {/* Overview */}
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="md:col-span-2 space-y-6">
+          <div className="max-w-[1400px] mx-auto px-6 space-y-20">
+            {/* Overview Grid */}
+            <div className="grid md:grid-cols-12 gap-12 lg:gap-20">
+              {/* Left Column: Challenge & Approach */}
+              <div className="md:col-span-8 space-y-16">
                 <div>
-                  <h2 className="font-serif text-3xl font-bold text-foreground mb-4">The Challenge</h2>
-                  <p className="text-muted-foreground leading-relaxed text-lg">{cs.challenge}</p>
+                  <h2 className="font-serif text-4xl font-bold text-foreground mb-6">The Challenge</h2>
+                  <p className="text-muted-foreground leading-relaxed text-lg max-w-4xl">{cs.challenge}</p>
                 </div>
                 <div>
-                  <h2 className="font-serif text-3xl font-bold text-foreground mb-4">The Approach</h2>
-                  <p className="text-muted-foreground leading-relaxed text-lg">{cs.approach}</p>
+                  <h2 className="font-serif text-4xl font-bold text-foreground mb-6">The Approach</h2>
+                  <p className="text-muted-foreground leading-relaxed text-lg max-w-4xl">{cs.approach}</p>
                 </div>
               </div>
 
-              {/* Sidebar */}
-              <div className="space-y-6">
-                <div className="bg-[var(--brand-cream)] rounded-2xl p-6 border border-border">
-                  <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-widest">Project info</h3>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex justify-between">
+              {/* Right Column: Sidebar */}
+              <div className="md:col-span-4 space-y-6">
+                <div className="bg-[var(--brand-cream)] rounded-3xl p-8 border border-border">
+                  <h3 className="font-semibold text-foreground mb-6 text-xs uppercase tracking-[0.2em]">Project info</h3>
+                  <div className="space-y-4 text-sm">
+                    <div className="flex justify-between border-b border-black/5 pb-3">
                       <span className="text-muted-foreground">Client</span>
                       <span className="font-medium text-foreground">{cs.client}</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between border-b border-black/5 pb-3">
                       <span className="text-muted-foreground">Year</span>
                       <span className="font-medium text-foreground">{cs.year}</span>
                     </div>
@@ -102,84 +107,71 @@ export default async function CaseStudyPage({ params }: Props) {
                   </div>
                 </div>
 
-                <div className="bg-[var(--brand-cream)] rounded-2xl p-6 border border-border">
-                  <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-widest">Tools used</h3>
+                <div className="bg-[var(--brand-cream)] rounded-3xl p-8 border border-border">
+                  <h3 className="font-semibold text-foreground mb-6 text-xs uppercase tracking-[0.2em]">Tools used</h3>
                   <div className="flex flex-wrap gap-2">
                     {cs.tools.map((tool) => (
-                      <span key={tool} className="bg-white text-muted-foreground text-xs px-3 py-1.5 rounded-full border border-border">{tool}</span>
+                      <span key={tool} className="bg-white text-muted-foreground text-xs px-4 py-2 rounded-full border border-border font-medium">
+                        {tool}
+                      </span>
                     ))}
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Design process */}
-            <div>
-              <h2 className="font-serif text-4xl font-bold text-foreground mb-12">Design process</h2>
-              <div className="space-y-0">
-                {cs.process.map((step, i) => (
-                  <div key={step.phase} className="relative grid grid-cols-[auto,1fr] gap-8 pb-12 last:pb-0">
-                    {/* Timeline */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm flex-shrink-0 shadow-lg">
-                        {String(i + 1).padStart(2, '0')}
-                      </div>
-                      {i < cs.process.length - 1 && (
-                        <div className="w-px flex-1 bg-border mt-3" />
-                      )}
-                    </div>
+          {/* FULL WIDTH IMAGE (Full Height, No Crop) */}
+          <div className="w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] mt-24 mb-24 overflow-hidden">
+            <Image
+              src={cs.fullimage}
+              alt={cs.title}
+              width={2560}
+              height={1440}
+              className="w-full h-auto block"
+              priority
+            />
+          </div>
 
-                    {/* Content */}
-                    <div className="pt-1.5 pb-4">
-                      <h3 className="font-serif text-2xl font-bold text-foreground mb-3">{step.phase}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{step.description}</p>
-                    </div>
+          {/* Results Deep-Dive (Also matches 1400px width) */}
+          <div className="max-w-[1400px] mx-auto px-6 mb-20">
+            <h2 className="font-serif text-4xl font-bold text-foreground mb-10">Detailed Outcomes</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {cs.results.map((r) => (
+                <div key={r.label} className="flex items-center gap-6 bg-[var(--brand-cream)] rounded-[2.5rem] p-8 border border-border">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <CheckCircle size={24} className="text-primary flex-shrink-0" />
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Results deep-dive */}
-            <div>
-              <h2 className="font-serif text-4xl font-bold text-foreground mb-8">Results</h2>
-              <div className="grid grid-cols-2 gap-4">
-                {cs.results.map((r) => (
-                  <div key={r.label} className="flex items-start gap-4 bg-[var(--brand-cream)] rounded-2xl p-6 border border-border">
-                    <CheckCircle size={20} className="text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="font-serif text-3xl font-bold text-foreground">{r.value}</p>
-                      <p className="text-muted-foreground text-sm mt-1">{r.label}</p>
-                    </div>
+                  <div>
+                    <p className="font-serif text-2xl font-bold text-foreground">{r.value}</p>
+                    <p className="text-muted-foreground text-base mt-1">{r.label}</p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* More case studies */}
+        {/* More Case Studies Section */}
         {others.length > 0 && (
-          <section className="py-20 bg-[var(--brand-cream)] border-t border-border">
+          <section className="py-24 bg-[var(--brand-cream)] border-t border-border">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="flex items-center justify-between mb-10">
-                <h2 className="font-serif text-3xl font-bold text-foreground">More case studies</h2>
-                <Link href="/case-studies" className="text-sm font-semibold text-primary hover:underline inline-flex items-center gap-1">
+              <div className="flex items-center justify-between mb-12">
+                <h2 className="font-serif text-4xl font-bold text-foreground">Explore more</h2>
+                <Link href="/case-studies" className="text-sm font-bold text-primary hover:underline inline-flex items-center gap-1 uppercase tracking-widest">
                   View all <ArrowRight size={14} />
                 </Link>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {others.map((other) => (
-                  <Link key={other.id} href={`/case-studies/${other.id}`} className="group bg-card rounded-3xl border border-border hover:border-primary/40 overflow-hidden hover:shadow-lg transition-all duration-300 block" data-hover>
-                    <div className="relative aspect-video overflow-hidden">
-                      <Image src={other.image} alt={other.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Link key={other.id} href={`/case-studies/${other.id}`} className="group bg-card rounded-[2.5rem] border border-border hover:border-primary/40 overflow-hidden hover:shadow-xl transition-all duration-500 block">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image src={other.image} alt={other.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                     </div>
-                    <div className="p-8">
-                      <span className="bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-widest">{other.category}</span>
-                      <h3 className="font-serif text-2xl font-bold text-foreground mt-4 mb-2 group-hover:text-primary transition-colors">{other.title}</h3>
-                      <p className="text-muted-foreground text-sm line-clamp-2">{other.subtitle}</p>
-                      <div className="mt-4 inline-flex items-center gap-1 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                        Read case study <ArrowRight size={13} />
-                      </div>
+                    <div className="p-10">
+                      <span className="bg-primary/10 text-primary text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest">{other.category}</span>
+                      <h3 className="font-serif text-3xl font-bold text-foreground mt-6 mb-3 group-hover:text-primary transition-colors">{other.title}</h3>
+                      <p className="text-muted-foreground text-base line-clamp-2">{other.subtitle}</p>
                     </div>
                   </Link>
                 ))}
@@ -188,15 +180,15 @@ export default async function CaseStudyPage({ params }: Props) {
           </section>
         )}
 
-        {/* CTA */}
-        <section className="py-20 bg-[var(--brand-dark)]">
+        {/* CTA Section */}
+        <section className="py-24 bg-[var(--brand-dark)]">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="font-serif text-5xl font-bold text-[var(--brand-cream)] mb-4">
+            <h2 className="font-serif text-5xl md:text-6xl font-bold text-[var(--brand-cream)] mb-6">
               Want results like these?
             </h2>
-            <p className="text-white/50 text-lg mb-8">Let&apos;s work together to solve your design challenge.</p>
-            <a href="mailto:ramsha@example.com" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:bg-[var(--brand-coral-deep)] transition-colors">
-              Start a project <ArrowRight size={16} />
+            <p className="text-white/60 text-xl mb-10 max-w-2xl mx-auto">Let&apos;s collaborate to transform your vision into an iconic brand experience.</p>
+            <a href="mailto:ramsha@example.com" className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-full font-bold hover:bg-[var(--brand-coral-deep)] transition-all transform hover:scale-105">
+              Start a project <ArrowRight size={18} />
             </a>
           </div>
         </section>

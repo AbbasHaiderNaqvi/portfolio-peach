@@ -10,7 +10,7 @@ import { projects } from '@/lib/data'
 import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-const categories = ['All', 'Brand Identity', 'Packaging', 'UI/UX Design', 'Editorial', 'Social Media', 'Motion Design']
+const categories = ['All', 'Brand Identity', 'Packaging',"pitch-deck", 'UI/UX Design', 'Editorial', 'Social Media', 'Motion Design']
 
 export default function PortfolioPage() {
   const [active, setActive] = useState('All')

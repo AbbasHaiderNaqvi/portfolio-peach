@@ -830,7 +830,15 @@ function FeaturedWork() {
                 data-hover
                 data-label="View"
               >
-                <Image src={featured[0].image} alt={featured[0].title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
+                {featured[0]?.image && (
+                  <Image
+                    src={featured[0].image}
+                    alt={featured[0].title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                  />
+                )}
+                {/* <Image src={featured[0].image || null } alt={featured[0].title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" /> */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                 {/* Shimmer overlay */}
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/8 transition-colors duration-500" />
@@ -857,7 +865,15 @@ function FeaturedWork() {
                     data-hover
                     data-label="View"
                   >
-                    <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
+                    {p?.image && (
+                      <Image
+                        src={p.image}
+                        alt={p.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                      />
+                    )}
+                    {/* <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.06]" /> */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
                     <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/8 transition-colors duration-500" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -1031,7 +1047,7 @@ function ProcessStrip() {
 ───────────────────────────────────────────────────────────── */
 function TestimonialsSection() {
   const testimonials = [
-    { name: 'Justin Mays', role: 'CEO, Lumina Skincare',work: 'Complete Brand Setup', text: 'Ramsha has been an absolute pleasure to work with. She is thoughtful, responsive, and incredibly detail-oriented. She took the time to truly understand my vision and translated it into clean, professional design work that exceeded my expectations. Communication was clear and timely throughout the entire process, and revisions were handled quickly and thoughtfully. I would not hesitate to work with Ramsha again and would highly recommend her to anyone looking for reliable, high-quality creative work.', rating: 5 },
+    { name: 'Justin Mays', role: 'CEO, Lumina Skincare', work: 'Complete Brand Setup', text: 'Ramsha has been an absolute pleasure to work with. She is thoughtful, responsive, and incredibly detail-oriented. She took the time to truly understand my vision and translated it into clean, professional design work that exceeded my expectations. Communication was clear and timely throughout the entire process, and revisions were handled quickly and thoughtfully. I would not hesitate to work with Ramsha again and would highly recommend her to anyone looking for reliable, high-quality creative work.', rating: 5 },
     { name: 'Brandon Sturgill', role: 'Product Lead, Pulse Health ', work: 'Logo and Brand Guidelines', text: 'Ramsha completed our re-branding project within budget and on-time with fantastic results. We would highly recommend exploring her design services if you are looking to create, refresh or redo your company branding!', rating: 5 },
     { name: 'Manthias Fisker', role: 'Creative Director, Aura Magazine', work: 'Brand Logo and Brand Strategy', text: 'Ramsha is a consummate professional and working with her was a pleasure. She asked excellent questions at the start and helped me identify what I really wanted. Ramsha brought a little humor to my logo that I didn\'t expect but appreciate!', rating: 5 },
   ]
