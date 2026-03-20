@@ -5,6 +5,7 @@ import Navigation from '@/components/navigation'
 import Footer from '@/components/footer'
 import { projects } from '@/lib/data'
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, Wrench } from 'lucide-react'
+import FadeImage from '@/components/FadeImage'
 
 type Props = { params: Promise<{ id: string }> }
 
@@ -71,12 +72,12 @@ export default async function ProjectPage({ params }: Props) {
 
           {/* ✅ FULL WIDTH IMAGE WITH ORIGINAL HEIGHT */}
           <div className="w-full mt-12">
-            <Image
+            <FadeImage
               src={project.cover}
               alt={project.title}
               width={2000}
               height={3000}
-              className="w-full h-auto"
+              sizes="100vw"
               priority
             />
           </div>

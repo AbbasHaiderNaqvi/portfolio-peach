@@ -127,8 +127,8 @@ export default function CaseStudiesPage() {
               <p className="text-muted-foreground mt-2 leading-relaxed">Let&apos;s solve your design challenge together.</p>
             </div>
             <div className="flex-shrink-0 flex flex-wrap gap-4">
-              <a href="mailto:ramsha@example.com" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:bg-[var(--brand-coral-deep)] transition-colors">
-                Get in touch <ArrowUpRight size={16} />
+              <a href="https://www.upwork.com/freelancers/ramshaa17?mp_source=share" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:bg-[var(--brand-coral-deep)] transition-colors">
+                let's connect on upwork <ArrowUpRight size={16} />
               </a>
               <Link href="/portfolio" className="inline-flex items-center gap-2 border border-border text-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent transition-colors">
                 View portfolio

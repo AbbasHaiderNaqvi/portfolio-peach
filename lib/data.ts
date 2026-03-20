@@ -1,6 +1,7 @@
 export type Project = {
   id: string
   title: string
+  slug:string
   category: string
   thumbnail: string
   cover: string
@@ -56,6 +57,7 @@ export const projects: Project[] = [
   {
     id: 'Izla-brand-identity',
     title: 'Izla brand identity',
+    slug:'Izla-brand-identity',
     category: 'Brand Identity',
 
     thumbnail: '/images/projects/Izla/Izla thumbnail.png',   // grid image
@@ -80,8 +82,8 @@ export const projects: Project[] = [
   {
     id: 'BigBun-brand-identity',
     title: 'Big Bun Brand Identity ',
+    slug:'BigBun-brand-identity',
     category: 'Brand Identity',
-
     thumbnail: '/images/projects/big-bun/Bigbun-thumbnail.png',   // grid image
     cover: '/images/projects/big-bun/bigbun-brandidentity.png',        // long hero image
     color: '#764c34',
@@ -104,8 +106,8 @@ export const projects: Project[] = [
   {
     id: 'Engpro-brand-identity',
     title: 'Branding Collection',
+    slug:'Engpro-brand-identity',
     category: 'Brand Identity',
-
     thumbnail: '/images/projects/Engpro/engpro-thumbnail.png',   // grid image
     cover: '/images/projects/Engpro/Engpro-brandidentity.png',        // long hero image
     color: '#764c34',
@@ -128,8 +130,8 @@ export const projects: Project[] = [
   {
     id: 'Kelvin-Logan-brand-identity',
     title: 'Kelvin Logan Brand Identity',
+    slug:'Kelvin-Logan-brand-identity',
     category: 'Brand Identity',
-
     thumbnail: '/images/projects/Kelvin/Kelvin-thumbnail.png',   // grid image
     cover: '/images/projects/Kelvin/Kelvin-brandidentity.png',        // long hero image
     color: '#764c34',
@@ -152,8 +154,8 @@ export const projects: Project[] = [
   {
     id: 'plexza-brand-identity',
     title: 'Plexa Brand Identity',
+    slug:'plexza-brand-identity',
     category: 'Brand Identity',
-
     thumbnail: '/images/projects/plexza/plexza-thumbnail.png',   // grid image
     cover: '/images/projects/plexza/plexza-brnadidentity.png',        // long hero image
     color: '#764c34',
@@ -176,8 +178,8 @@ export const projects: Project[] = [
   {
     id: 'Chocoberry-Packaging',
     title: 'ChoCo Ice Cream Packaging',
+    slug:'Chocoberry-Packaging',
     category: 'Packaging',
-
     thumbnail: '/images/projects/chocoberry/choco-thumbnail.png',   // grid image
     cover: '/images/projects/chocoberry/choco-packaging.png',        // long hero image
     color: '#764c34',
@@ -200,8 +202,8 @@ export const projects: Project[] = [
   {
     id: 'Natura-Packaging',
     title: 'Natura Essential Oil Packaging',
+    slug:'Natura-Packaging',
     category: 'Packaging',
-
     thumbnail: '/images/projects/Natura/Natura-thumbnail.png',   // grid image
     cover: '/images/projects/Natura/Natura-packaging.png',        // long hero image
     color: '#764c34',
@@ -224,8 +226,8 @@ export const projects: Project[] = [
   {
     id: 'Kbukka-Packaging',
     title: 'Kvokka Bubble Tea Branding and Packaging',
+    slug:'Kbukka-Packaging',
     category: 'Packaging',
-
     thumbnail: '/images/projects/Kabukka/Kabukka-thumbnail.png',   // grid image
     cover: '/images/projects/Kabukka/Kabbukka.svg',        // long hero image
     color: '#764c34',
@@ -248,8 +250,8 @@ export const projects: Project[] = [
   {
     id: 'Creative-labs',
     title: 'CreativeLab Startup Pitch Deck',
+    slug:'Creative-labs',
     category: 'pitch-deck',
-
     thumbnail: '/images/projects/Creative-labs/Creativelabs-thumbnail.png',   // grid image
     cover: '/images/projects/Creative-labs/Creativelab-pitchdeck.jpg',        // long hero image
     color: '#764c34',
@@ -272,8 +274,8 @@ export const projects: Project[] = [
   {
     id: 'Izla-Investor-Deck',
     title: 'Izla Investor Deck',
+    slug:'Izla-Investor-Deck',
     category: 'pitch-deck',
-
     thumbnail: '/images/projects/Agentic-AI/agenticAi-thumbnail.png',   // grid image
     cover: '/images/projects/Agentic-AI/AgenticAi-pitchdeck.jpg',        // long hero image
     color: '#764c34',
@@ -296,8 +298,8 @@ export const projects: Project[] = [
   {
     id: 'Green-track',
     title: 'Greentrack Logistics Pitch Deck',
+    slug:'Green-track',
     category: 'pitch-deck',
-
     thumbnail: '/images/projects/Green-track/Greentrack-thumbnail.png',   // grid image
     cover: '/images/projects/Green-track/Greentrack-pitchdeck.jpg',        // long hero image
     color: '#764c34',
@@ -320,8 +322,8 @@ export const projects: Project[] = [
   {
     id: 'Automobile',
     title: 'Rent Car Business Plan Deck',
+    slug:'Rent-Car-Business-Plan-Deck',
     category: 'pitch-deck',
-
     thumbnail: '/images/projects/Automobile/Automobile-thumbnail.png',   // grid image
     cover: '/images/projects/Automobile/Automobile-pitchdeck.jpg',        // long hero image
     color: '#764c34',
@@ -344,8 +346,8 @@ export const projects: Project[] = [
   {
     id: 'Norhtfair-studio',
     title: 'Northform Studio Agency Deck',
+    slug:'Norhtfair-studio',
     category: 'pitch-deck',
-
     thumbnail: '/images/projects/Northfairstudio/Northfair-thumbnail.png',   // grid image
     cover: '/images/projects/Northfairstudio/Northfair-pitchdeck.jpg',        // long hero image
     color: '#764c34',
@@ -368,8 +370,8 @@ export const projects: Project[] = [
   {
     id: 'design-studio',
     title: 'Shoreditch Design Studio Investor Deck',
+    slug:'design-studio',
     category: 'pitch-deck',
-
     thumbnail: '/images/projects/designstudio/designstudio-thumbnail.png',   // grid image
     cover: '/images/projects/designstudio/designstudio-pitchdeck.jpg',        // long hero image
     color: '#764c34',
@@ -392,8 +394,8 @@ export const projects: Project[] = [
   {
     id: 'directdimension',
     title: 'Direct Dimension Pricing Strategy Deck',
+    slug:'directdimension',
     category: 'pitch-deck',
-
     thumbnail: '/images/projects/directdimension/directdimension-thumbnail.png',   // grid image
     cover: '/images/projects/directdimension/directdimension-pitchdeck.jpg',        // long hero image
     color: '#764c34',
@@ -416,8 +418,8 @@ export const projects: Project[] = [
   {
     id: 'designstudio2',
     title: 'GameGrid Pitch Deck',
+    slug:'GameGrid-Pitch-Deck',
     category: 'pitch-deck',
-
     thumbnail: '/images/projects/designstudio2/designstudio2-thumbnail.png',   // grid image
     cover: '/images/projects/designstudio2/designstudio2-pitchdeck.jpg',        // long hero image
     color: '#764c34',

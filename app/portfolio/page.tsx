@@ -142,7 +142,7 @@ export default function PortfolioPage() {
               <p className="text-muted-foreground mt-2">Let&apos;s discuss your next project.</p>
             </div>
             <a href="mailto:ramsha@example.com" className="flex-shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:bg-[var(--brand-coral-deep)] transition-colors">
-              Get in touch <ArrowUpRight size={16} />
+              let's connect on upwork <ArrowUpRight size={16} />
             </a>
           </div>
         </section>

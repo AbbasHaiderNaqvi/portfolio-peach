@@ -653,7 +653,7 @@ function HeroSection() {
             >
               <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[490px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/ramsha-ali.jpg"
+                  src="/images/ramsha-Home_Hero_section.png"
                   alt="Ramsha Ali — Graphic Designer"
                   fill
                   className="object-cover object-top"
@@ -912,7 +912,7 @@ function AboutSection() {
           <Reveal className="relative">
             <div className="relative z-10 rounded-3xl overflow-hidden aspect-[4/5] max-w-md shadow-2xl">
               <Image
-                src="/images/ramsha-ali.jpg"
+                src="/images/ramsha-About_me_section .png"
                 alt="Ramsha Ali"
                 fill
                 className="object-cover object-top"
@@ -1143,7 +1143,7 @@ function CTASection() {
 
         <Reveal delay={0.15} className="flex flex-wrap justify-center gap-4">
           <MagneticBtn
-            href="mailto:ramsha@example.com"
+            href="https://www.upwork.com/freelancers/ramshaa17?mp_source=share"
             className="items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:bg-[var(--brand-coral-deep)] transition-colors shadow-xl shadow-primary/30"
             strength={0.25}
           >

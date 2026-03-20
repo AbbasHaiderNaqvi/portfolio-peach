@@ -74,10 +74,10 @@ export default function Navigation() {
 
           {/* CTA */}
           <a
-            href="mailto:ramsha@example.com"
+            href="https://www.upwork.com/freelancers/ramshaa17?mp_source=share"
             className="hidden md:inline-flex items-center gap-2 text-sm font-semibold bg-primary text-primary-foreground px-5 py-2.5 rounded-full hover:bg-[var(--brand-coral-deep)] transition-colors duration-200"
           >
-            Hire Me
+            let's connect on upwork
           </a>
 
           {/* Mobile toggle */}

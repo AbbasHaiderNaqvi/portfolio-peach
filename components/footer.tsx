@@ -35,10 +35,10 @@ export default function Footer() {
           <div>
             <p className="font-semibold text-white/30 uppercase tracking-widest text-xs mb-4">Available for freelance</p>
             <a
-              href="mailto:ramsha@example.com"
+              href="https://www.upwork.com/freelancers/ramshaa17?mp_source=share"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold text-sm hover:bg-[var(--brand-coral-deep)] transition-colors"
             >
-              Let&apos;s work together
+              let's connect on upwork
             </a>
           </div>
         </div>
