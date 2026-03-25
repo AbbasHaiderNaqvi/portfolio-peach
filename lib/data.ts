@@ -109,7 +109,7 @@ export const projects: Project[] = [
     slug:'Engpro-brand-identity',
     category: 'Brand Identity',
     thumbnail: '/images/projects/Engpro/engpro-thumbnail.png',   // grid image
-    cover: '/images/projects/Engpro/Engpro-brandidentity.png',        // long hero image
+    cover: '/images/projects/Engpro/Engpro-brandidentity.svg',        // long hero image
     color: '#764c34',
     description: 'A curated collection of brand identity and design work spanning industries, from music labels and sports cars to food trucks and engineering firms.',
     longDescription: 'A selection of standout branding projects across diverse industries. Each piece in this collection represents a distinct visual world built from the ground up. Infinity Music brings dark cinematic energy to a global music label. Engepro delivers a bold technical identity for an engineering firm. NexOnic pushes futuristic automotive branding into a high fidelity web experience. Superdog wraps a food truck personality into a vibrant orange character driven identity. IMSSY builds a full scale industrial brand system with app, pattern and environmental applications.',

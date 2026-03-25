@@ -745,61 +745,198 @@ function HeroSection() {
 ───────────────────────────────────────────────────────────── */
 function ServicesSection() {
   const services = [
-    { title: 'Logo Design', desc: ' Logo Design Custom, scalable logos built for recognition, trust and lasting impact.', icon: '◈', n: '01' },
-    { title: 'Brand Guidelines', desc: 'Brand Guidelines Complete brand books that define your visual DNA including typography, color, spacing and usage rules.', icon: '⬡', n: '02' },
-    { title: 'E-Book Design', desc: 'E-Book Design Beautifully structured e-books and digital publications that are as readable as they are stunning.', icon: '◉', n: '03' },
-    { title: 'Packaging Design', desc: 'Packaging Design Shelf-ready packaging that communicates quality and drives purchase decisions.', icon: '▣', n: '04' },
-    { title: 'Pitch Deck', desc: 'Pitch Deck Investor-ready decks that tell your story clearly, confidently and visually.', icon: '◌', n: '05' },
-    { title: 'Apparel Graphics', desc: 'Apparel Graphics Bold, print-ready graphics for t-shirts, merch and branded apparel.', icon: '◈', n: '06' },
+    {
+      title: 'Logo Design',
+      link: '/case-studies',
+      desc: 'Custom, scalable logos built for recognition, trust and lasting impact.',
+      icon: '◈',
+      n: '01',
+    },
+    {
+      title: 'Brand Guidelines',
+      link: '/portfolios/brand-identity',
+      desc: 'Complete brand books that define your visual DNA including typography, color, spacing and usage rules.',
+      icon: '⬡',
+      n: '02',
+    },
+    {
+      title: 'E-Book Design',
+      link: null,
+      desc: 'Beautifully structured e-books and digital publications that are as readable as they are stunning.',
+      icon: '◉',
+      n: '03',
+    },
+    {
+      title: 'Packaging Design',
+      link: '/portfolios/packaging',
+      desc: 'Shelf-ready packaging that communicates quality and drives purchase decisions.',
+      icon: '▣',
+      n: '04',
+    },
+    {
+      title: 'Pitch Deck',
+      link: '/portfolios/pitch-deck',
+      desc: 'Investor-ready decks that tell your story clearly, confidently and visually.',
+      icon: '◌',
+      n: '05',
+    },
+    {
+      title: 'Apparel Graphics',
+      link: null,
+      desc: 'Bold, print-ready graphics for t-shirts, merch and branded apparel.',
+      icon: '◈',
+      n: '06',
+    },
   ]
 
   return (
     <section className="py-32 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <div>
-            <span className="text-primary text-xs font-semibold uppercase tracking-[0.2em]">What I do</span>
-            <h2 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mt-3 text-balance leading-tight">
+            <span className="text-primary text-xs font-semibold uppercase tracking-[0.2em]">
+              What I do
+            </span>
+            <h2 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mt-3 leading-tight">
               Services &<br />expertise
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-xs leading-relaxed text-sm">
+          <p className="text-muted-foreground max-w-xs text-sm">
             Every project is approached with research, strategy, and craft — delivering design that performs.
           </p>
-        </Reveal>
+        </div>
 
-        <Stagger
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          baseDelay={0.05}
-          step={0.08}
-        >
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className="group relative p-8 h-[260px] rounded-2xl border border-border hover:border-primary/40 bg-card hover:bg-accent/30 transition-all duration-500 cursor-default overflow-hidden flex flex-col"
-              data-hover
-            >
-              {/* Number watermark */}
-              <span className="absolute top-4 right-5 font-serif text-6xl font-bold text-foreground/[0.04] select-none group-hover:text-primary/10 transition-colors duration-500">
-                {s.n}
-              </span>
-              {/* Icon */}
-              <span className="text-3xl text-primary block mb-5 group-hover:scale-110 transition-transform duration-300 origin-left">{s.icon}</span>
-              <h3 className="font-semibold text-lg text-foreground mb-2">{s.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-              {/* Arrow reveal */}
-              <div className="mt-6 flex items-center gap-1.5 text-primary text-sm font-semibold translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                Learn more <ArrowRight size={13} />
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {services.map((s) => {
+            const Card = (
+              <div
+                className={`group relative p-8 h-[260px] rounded-2xl border bg-card transition-all duration-500 overflow-hidden flex flex-col
+                ${
+                  s.link
+                    ? 'cursor-pointer border-border hover:border-primary/40 hover:bg-accent/30'
+                    : 'opacity-60 cursor-not-allowed border-border'
+                }`}
+              >
+                {/* Number watermark */}
+                <span className="absolute top-4 right-5 font-serif text-6xl font-bold text-foreground/[0.04] select-none group-hover:text-primary/10 transition-colors duration-500">
+                  {s.n}
+                </span>
+
+                {/* Icon */}
+                <span className="text-3xl text-primary mb-5 group-hover:scale-110 transition-transform duration-300 origin-left">
+                  {s.icon}
+                </span>
+
+                {/* Title */}
+                <h3 className="font-semibold text-lg text-foreground mb-2">
+                  {s.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {s.desc}
+                </p>
+
+                {/* CTA */}
+                {s.link ? (
+                  <div className="mt-6 flex items-center gap-1.5 text-primary text-sm font-semibold translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    Learn more <ArrowRight size={13} />
+                  </div>
+                ) : (
+                  <span className="mt-6 text-xs text-muted-foreground">
+                    Coming soon
+                  </span>
+                )}
+
+                {/* Bottom accent bar */}
+                {s.link && (
+                  <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary group-hover:w-full transition-all duration-500 ease-out" />
+                )}
               </div>
-              {/* Bottom accent bar */}
-              <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary group-hover:w-full transition-all duration-500 ease-out" />
-            </div>
-          ))}
-        </Stagger>
+            )
+
+            return s.link ? (
+              <Link key={s.title} href={s.link}>
+                {Card}
+              </Link>
+            ) : (
+              <div key={s.title}>{Card}</div>
+            )
+          })}
+        </div>
       </div>
     </section>
   )
 }
+
+
+// function ServicesSection() {
+//   const services = [
+//     { title: 'Logo Design', desc: ' Logo Design Custom, scalable logos built for recognition, trust and lasting impact.', icon: '◈', n: '01' },
+//     { title: 'Brand Guidelines', desc: 'Brand Guidelines Complete brand books that define your visual DNA including typography, color, spacing and usage rules.', icon: '⬡', n: '02' },
+//     { title: 'E-Book Design', desc: 'E-Book Design Beautifully structured e-books and digital publications that are as readable as they are stunning.', icon: '◉', n: '03' },
+//     { title: 'Packaging Design', desc: 'Packaging Design Shelf-ready packaging that communicates quality and drives purchase decisions.', icon: '▣', n: '04' },
+//     { title: 'Pitch Deck', desc: 'Pitch Deck Investor-ready decks that tell your story clearly, confidently and visually.', icon: '◌', n: '05' },
+//     { title: 'Apparel Graphics', desc: 'Apparel Graphics Bold, print-ready graphics for t-shirts, merch and branded apparel.', icon: '◈', n: '06' },
+//   ]
+//   const services = [
+//   { title: 'Logo Design', link: '/case-study', desc: 'Logo Design Custom, scalable logos built for recognition, trust and lasting impact.', icon: '◈', n: '01' },
+//   { title: 'Brand Guidelines', link: '/portfolio/brand-identity', desc: 'Brand Guidelines Complete brand books that define your visual DNA including typography, color, spacing and usage rules.', icon: '⬡', n: '02' },
+//   { title: 'E-Book Design', link: null, desc: 'E-Book Design Beautifully structured e-books and digital publications that are as readable as they are stunning.', icon: '◉', n: '03' },
+//   { title: 'Packaging Design', link: '/portfolio/packaging', desc: 'Packaging Design Shelf-ready packaging that communicates quality and drives purchase decisions.', icon: '▣', n: '04' },
+//   { title: 'Pitch Deck', link: '/portfolio/pitchdeck', desc: 'Pitch Deck Investor-ready decks that tell your story clearly, confidently and visually.', icon: '◌', n: '05' },
+//   { title: 'Apparel Graphics', link: null, desc: 'Apparel Graphics Bold, print-ready graphics for t-shirts, merch and branded apparel.', icon: '◈', n: '06' },
+// ]
+
+//   return (
+//     <section className="py-32 bg-background overflow-hidden">
+//       <div className="max-w-7xl mx-auto px-6">
+//         <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+//           <div>
+//             <span className="text-primary text-xs font-semibold uppercase tracking-[0.2em]">What I do</span>
+//             <h2 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mt-3 text-balance leading-tight">
+//               Services &<br />expertise
+//             </h2>
+//           </div>
+//           <p className="text-muted-foreground max-w-xs leading-relaxed text-sm">
+//             Every project is approached with research, strategy, and craft — delivering design that performs.
+//           </p>
+//         </Reveal>
+
+//         <Stagger
+//           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+//           baseDelay={0.05}
+//           step={0.08}
+//         >
+//           {services.map((s) => (
+//             <div
+//               key={s.title}
+//               className="group relative p-8 h-[260px] rounded-2xl border border-border hover:border-primary/40 bg-card hover:bg-accent/30 transition-all duration-500 cursor-default overflow-hidden flex flex-col"
+//               data-hover
+//             >
+//               {/* Number watermark */}
+//               <span className="absolute top-4 right-5 font-serif text-6xl font-bold text-foreground/[0.04] select-none group-hover:text-primary/10 transition-colors duration-500">
+//                 {s.n}
+//               </span>
+//               {/* Icon */}
+//               <span className="text-3xl text-primary block mb-5 group-hover:scale-110 transition-transform duration-300 origin-left">{s.icon}</span>
+//               <h3 className="font-semibold text-lg text-foreground mb-2">{s.title}</h3>
+//               <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+//               {/* Arrow reveal */}
+//               <div className="mt-6 flex items-center gap-1.5 text-primary text-sm font-semibold translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+//                 Learn more <ArrowRight size={13} />
+//               </div>
+//               {/* Bottom accent bar */}
+//               <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary group-hover:w-full transition-all duration-500 ease-out" />
+//             </div>
+//           ))}
+//         </Stagger>
+//       </div>
+//     </section>
+//   )
+// }
 
 /* ─────────────────────────────────────────────────────────────
    FEATURED WORK
@@ -830,9 +967,9 @@ function FeaturedWork() {
                 data-hover
                 data-label="View"
               >
-                {featured[0]?.image && (
+                {featured[0]?.thumbnail && (
                   <Image
-                    src={featured[0].image}
+                    src={featured[0].thumbnail}
                     alt={featured[0].title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
@@ -865,9 +1002,9 @@ function FeaturedWork() {
                     data-hover
                     data-label="View"
                   >
-                    {p?.image && (
+                    {p?.thumbnail && (
                       <Image
-                        src={p.image}
+                        src={p.thumbnail}
                         alt={p.title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
