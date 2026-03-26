@@ -790,6 +790,7 @@ function ServicesSection() {
   ]
 
   return (
+
     <section className="py-32 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -813,11 +814,10 @@ function ServicesSection() {
             const Card = (
               <div
                 className={`group relative p-8 h-[260px] rounded-2xl border bg-card transition-all duration-500 overflow-hidden flex flex-col
-                ${
-                  s.link
+                ${s.link
                     ? 'cursor-pointer border-border hover:border-primary/40 hover:bg-accent/30'
                     : 'opacity-60 cursor-not-allowed border-border'
-                }`}
+                  }`}
               >
                 {/* Number watermark */}
                 <span className="absolute top-4 right-5 font-serif text-6xl font-bold text-foreground/[0.04] select-none group-hover:text-primary/10 transition-colors duration-500">

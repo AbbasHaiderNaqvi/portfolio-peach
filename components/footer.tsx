@@ -38,7 +38,7 @@ export default function Footer() {
               href="https://www.upwork.com/freelancers/ramshaa17?mp_source=share"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold text-sm hover:bg-[var(--brand-coral-deep)] transition-colors"
             >
-              let's connect on upwork
+              Let’s Connect on upwork
             </a>
           </div>
         </div>

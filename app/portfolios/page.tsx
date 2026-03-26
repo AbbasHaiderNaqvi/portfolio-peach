@@ -189,26 +189,32 @@ const categories = [
   'Motion Design',
 ]
 
-// 🔥 helper functions
+// ✅ FIXED slug function (handles "/")
 const toSlug = (str: string) =>
-  str.toLowerCase().replace(/\s+/g, '-')
+  str
+    .toLowerCase()
+    .replace(/[\/]/g, '-') // 🔥 important fix
+    .replace(/\s+/g, '-')
 
-const fromSlug = (slug: string) =>
-  slug
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase())
+// ✅ map slug → actual category
+const slugMap: Record<string, string> = {
+  'brand-identity': 'Brand Identity',
+  'packaging': 'Packaging',
+  'pitch-deck': 'pitch-deck',
+  'ui-ux-design': 'UI/UX Design',
+  'editorial': 'Editorial',
+  'social-media': 'Social Media',
+  'motion-design': 'Motion Design',
+}
 
-export default function PortfolioPage({ defaultCategory }: { defaultCategory?: string }) {
-  // const [active, setActive] = useState('All')
-  const [active, setActive] = useState(
-    defaultCategory ? fromSlug(defaultCategory) : 'All'
-  )
+export default function PortfolioPage() {
+  const [active, setActive] = useState('All')
   const [hovered, setHovered] = useState<string | null>(null)
 
   const router = useRouter()
   const pathname = usePathname()
 
-  // ✅ Sync URL → filter
+  // ✅ Sync URL → active category
   useEffect(() => {
     const parts = pathname.split('/')
     const slug = parts[2]
@@ -218,11 +224,10 @@ export default function PortfolioPage({ defaultCategory }: { defaultCategory?: s
       return
     }
 
-    const formatted = fromSlug(slug)
-    setActive(formatted)
+    setActive(slugMap[slug] || 'All')
   }, [pathname])
 
-  // ✅ Filter logic
+  // ✅ Filter logic (clean + reliable)
   const filtered =
     active === 'All'
       ? projects
@@ -257,7 +262,12 @@ export default function PortfolioPage({ defaultCategory }: { defaultCategory?: s
                 key={cat}
                 onClick={() => {
                   setActive(cat)
-                  router.push(cat === 'All' ? '/portfolios' : `/portfolios/${toSlug(cat)}`)
+
+                  if (cat === 'All') {
+                    router.push('/portfolios')
+                  } else {
+                    router.push(`/portfolios/${toSlug(cat)}`)
+                  }
                 }}
                 className={cn(
                   'px-5 py-2 rounded-full text-sm font-semibold transition',

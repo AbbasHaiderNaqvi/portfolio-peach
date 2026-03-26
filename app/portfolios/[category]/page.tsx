@@ -1,26 +1,29 @@
 import PortfoliosPage from '../page'
 
-// This dynamic page handles URLs like /portfolios/packaging
-// It simply imports and renders your main PortfoliosPage component
-export default function CategoryFilterPage() {
-  return <PortfoliosPage />
+type Props = {
+  params: {
+    category: string
+  }
 }
 
-/** * Optional: If you want to improve SEO by generating 
- * static paths for your categories, you can add this:
- */
+// ✅ Pass category slug to main page
+export default function CategoryFilterPage({ params }: Props) {
+  return <PortfoliosPage defaultCategory={params.category} />
+}
+
+// ✅ ALL categories in SLUG format
 export async function generateStaticParams() {
   const categories = [
-  'Brand Identity',
-  'Packaging',
-  'pitch-deck',
-  'UI/UX Design',
-  'Editorial',
-  'Social Media',
-  'Motion Design',
+    'brand-identity',
+    'packaging',
+    'pitch-deck',
+    'ui/ux-design',
+    'editorial',
+    'social-media',
+    'motion-design',
   ]
 
-  return categories.map((cat) => ({
-    category: cat,
+  return categories.map((category) => ({
+    category,
   }))
 }
