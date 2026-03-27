@@ -130,7 +130,7 @@ export default function CaseStudiesPage() {
               <a href="https://www.upwork.com/freelancers/ramshaa17?mp_source=share" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:bg-[var(--brand-coral-deep)] transition-colors">
                 Let’s Connect on upwork <ArrowUpRight size={16} />
               </a>
-              <Link href="/portfolio" className="inline-flex items-center gap-2 border border-border text-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent transition-colors">
+              <Link href="/portfolios" className="inline-flex items-center gap-2 border border-border text-foreground px-8 py-4 rounded-full font-semibold hover:bg-accent transition-colors">
                 View portfolio
               </Link>
             </div>

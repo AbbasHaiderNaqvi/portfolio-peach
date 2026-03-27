@@ -602,7 +602,7 @@ function HeroSection() {
               }}
             >
               <MagneticBtn
-                href="/portfolio"
+                href="/portfolios"
                 className="items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 sm:px-7 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:bg-[var(--brand-coral-deep)] transition-colors shadow-lg shadow-primary/25"
                 data-label="Go"
               >
@@ -944,6 +944,8 @@ function ServicesSection() {
 function FeaturedWork() {
   const featured = projects.slice(0, 3)
 
+  const toSlug = (str: string) => str?.toLowerCase().replace(/\s+/g, '-') || ''
+
   return (
     <section className="py-32 bg-[var(--brand-cream)]">
       <div className="max-w-7xl mx-auto px-6">
@@ -962,7 +964,7 @@ function FeaturedWork() {
           <Reveal delay={0.05} className="lg:col-span-7">
             <TiltCard depth={5} className="h-full">
               <Link
-                href={`/portfolio/${featured[0].id}`}
+                href={`/portfolio/${toSlug(featured[0].category)}/${toSlug(featured[0].id)}`}
                 className="group relative rounded-3xl overflow-hidden block h-full min-h-[400px] lg:h-[520px]"
                 data-hover
                 data-label="View"
@@ -997,7 +999,7 @@ function FeaturedWork() {
               <Reveal key={p.id} delay={0.1 + i * 0.12}>
                 <TiltCard depth={6} className="h-full">
                   <Link
-                    href={`/portfolio/${p.id}`}
+                    href={`/portfolio/${toSlug(p.category)}/${toSlug(p.id)}`}
                     className="group relative rounded-3xl overflow-hidden block aspect-video"
                     data-hover
                     data-label="View"
@@ -1120,7 +1122,7 @@ function AboutSection() {
 
             <Reveal delay={0.3}>
               <MagneticBtn
-                href="/portfolio"
+                href="/portfolios"
                 className="items-center gap-2 bg-primary text-primary-foreground px-7 py-4 rounded-full font-semibold hover:bg-[var(--brand-coral-deep)] transition-colors shadow-lg shadow-primary/20"
               >
                 See my work <ArrowRight size={16} />

@@ -18,7 +18,7 @@ export default function Footer() {
               <p className="font-semibold text-white/30 uppercase tracking-widest text-xs mb-4">Pages</p>
               <ul className="space-y-3">
                 <li><Link href="/" className="text-white/60 hover:text-primary transition-colors">Home</Link></li>
-                <li><Link href="/portfolio" className="text-white/60 hover:text-primary transition-colors">Portfolio</Link></li>
+                <li><Link href="/portfolios" className="text-white/60 hover:text-primary transition-colors">Portfolio</Link></li>
                 <li><Link href="/case-studies" className="text-white/60 hover:text-primary transition-colors">Case Studies</Link></li>
               </ul>
             </div>
