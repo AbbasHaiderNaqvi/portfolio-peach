@@ -1051,7 +1051,7 @@ function AboutSection() {
           <Reveal className="relative">
             <div className="relative z-10 rounded-3xl overflow-hidden aspect-[4/5] max-w-md shadow-2xl">
               <Image
-                src="/images/ramsha-About_me_section .png"
+                src="/images/ramsha-About_me_section .webp"
                 alt="Ramsha Ali"
                 fill
                 className="object-cover object-top"
