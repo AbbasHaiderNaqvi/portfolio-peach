@@ -189,14 +189,14 @@ const categories = [
   'Motion Design',
 ]
 
-// ✅ FIXED slug function (handles "/")
+// Slug helper
 const toSlug = (str: string) =>
   str
     .toLowerCase()
-    .replace(/[\/]/g, '-') // 🔥 important fix
+    .replace(/[\/]/g, '-')
     .replace(/\s+/g, '-')
 
-// ✅ map slug → actual category
+// Map slug back to actual category name
 const slugMap: Record<string, string> = {
   'brand-identity': 'Brand Identity',
   'packaging': 'Packaging',
@@ -214,7 +214,7 @@ export default function PortfolioPage() {
   const router = useRouter()
   const pathname = usePathname()
 
-  // ✅ Sync URL → active category
+  // Sync URL with active category
   useEffect(() => {
     const parts = pathname.split('/')
     const slug = parts[2]
@@ -227,7 +227,6 @@ export default function PortfolioPage() {
     setActive(slugMap[slug] || 'All')
   }, [pathname])
 
-  // ✅ Filter logic (clean + reliable)
   const filtered =
     active === 'All'
       ? projects
@@ -255,14 +254,13 @@ export default function PortfolioPage() {
         </section>
 
         {/* Filters */}
-        <div className="sticky top-16 z-30 bg-background/90 backdrop-blur-lg border-b">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex gap-2 overflow-x-auto">
+        <div className="sticky top-16 z-30 bg-background/90 backdrop-blur-lg border-b border-border">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex gap-2 overflow-x-auto scrollbar-none">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => {
                   setActive(cat)
-
                   if (cat === 'All') {
                     router.push('/portfolios')
                   } else {
@@ -270,9 +268,9 @@ export default function PortfolioPage() {
                   }
                 }}
                 className={cn(
-                  'px-5 py-2 rounded-full text-sm font-semibold transition',
+                  'px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap',
                   active === cat
-                    ? 'bg-primary text-white'
+                    ? 'bg-primary text-white shadow-md'
                     : 'bg-muted text-muted-foreground hover:bg-accent'
                 )}
               >
@@ -291,7 +289,7 @@ export default function PortfolioPage() {
                   key={project.id}
                   href={`/portfolio/${toSlug(project.category)}/${toSlug(project.id)}`}
                   className={cn(
-                    'group relative rounded-3xl overflow-hidden aspect-[4/3] block',
+                    'group relative rounded-3xl overflow-hidden aspect-[4/3] block bg-muted transition-all duration-500',
                     i === 0 && active === 'All'
                       ? 'md:col-span-2 aspect-video'
                       : ''
@@ -303,13 +301,21 @@ export default function PortfolioPage() {
                     src={project.thumbnail}
                     alt={project.title}
                     fill
+                    // 🔥 OPTIMIZATION: Fetches resized images & prevents top-to-bottom loading
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    // 🔥 PRIORITY: Load the first 2-3 cards instantly
+                    priority={i < 3}
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    quality={85}
+                    // 🔥 PLACEHOLDER: Shows a blur while the image loads
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
                   />
 
                   {/* Overlay */}
                   <div
                     className={cn(
-                      'absolute inset-0 transition',
+                      'absolute inset-0 transition-opacity duration-500',
                       hovered === project.id
                         ? 'bg-black/70'
                         : 'bg-black/40'
@@ -317,8 +323,8 @@ export default function PortfolioPage() {
                   />
 
                   {/* Category */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-white/20 text-white text-xs px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="bg-white/20 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full border border-white/10">
                       {project.category}
                     </span>
                   </div>
@@ -326,7 +332,7 @@ export default function PortfolioPage() {
                   {/* Arrow */}
                   <div
                     className={cn(
-                      'absolute top-4 right-4 w-9 h-9 bg-primary rounded-full flex items-center justify-center transition',
+                      'absolute top-4 right-4 z-10 w-9 h-9 bg-primary rounded-full flex items-center justify-center transition-all duration-300',
                       hovered === project.id
                         ? 'opacity-100 scale-100'
                         : 'opacity-0 scale-75'
@@ -336,8 +342,8 @@ export default function PortfolioPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="absolute bottom-0 p-6">
-                    <h3 className="text-white text-xl font-bold">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                    <h3 className="text-white text-xl md:text-2xl font-serif font-bold group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
                   </div>
@@ -347,7 +353,7 @@ export default function PortfolioPage() {
 
             {filtered.length === 0 && (
               <div className="text-center py-20 text-muted-foreground">
-                No projects found.
+                No projects found in this category.
               </div>
             )}
           </div>
