@@ -653,7 +653,7 @@ function HeroSection() {
             >
               <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[490px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/ramsha-Home_Hero_section.png"
+                  src="/images/ramsha-Home_Hero_section.webp"
                   alt="Ramsha Ali — Graphic Designer"
                   fill
                   className="object-cover object-top"
