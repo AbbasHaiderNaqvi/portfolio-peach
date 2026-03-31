@@ -187,6 +187,8 @@ const categories = [
   'Editorial',
   'Social Media',
   'Motion Design',
+  'Ebook',
+  'Apparel Design'
 ]
 
 // ✅ FIXED slug function (handles "/")
@@ -205,6 +207,8 @@ const slugMap: Record<string, string> = {
   'editorial': 'Editorial',
   'social-media': 'Social Media',
   'motion-design': 'Motion Design',
+  'ebook': 'Ebook',
+  'apparel-design': 'Apparel Design',
 }
 
 export default function PortfolioPage() {

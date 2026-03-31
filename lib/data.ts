@@ -1,21 +1,22 @@
 export type Project = {
   id: string
   title: string
-  slug:string
+  slug: string
   category: string
   thumbnail: string
   cover: string
-  tags: string[]
-  year: string
-  description: string
-  longDescription: string
   color: string
-  client: string
-  duration: string
-  role: string
-  tools: string[]
-  outcomes: string[]
-  gallery: string[]
+
+  tags?: string[]
+  year?: string
+  description?: string
+  longDescription?: string
+  client?: string
+  duration?: string
+  role?: string
+  tools?: string[]
+  outcomes?: string[]
+  gallery?: string[]
 }
 
 export type CaseStudy = {
@@ -439,6 +440,132 @@ export const projects: Project[] = [
     tools: ['Figma', 'Illustrator CC', 'Powerpoint'],
     outcomes: ['Full strategy deck designed across all key sections', 'Data visualization designed for pricing variance and revenue impact', 'Key findings, financial impact and SAE volume slides delivered']
   },
+  {
+    id: "ebook_6aprenoiados_poderosos",
+    title: "Ebook_6aprenoiados poderosos",
+    slug: "ebook_6aprenoiados_poderosos",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_6aprenoizados poderosos/poderosos_cover.jpg",
+    cover: "/images/projects/Ebook_6aprenoizados poderosos/poderosos_cover.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_acme_investment",
+    title: "Ebook_Acme investment",
+    slug: "ebook_acme_investment",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_Acme investment/Acmeinvestment_cover.jpg",
+    cover: "/images/projects/Ebook_Acme investment/Acmeinvestment_cover.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_clicksite",
+    title: "Ebook_Clicksite",
+    slug: "ebook_clicksite",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_Clicksite/Clicksite_cover.jpg",
+    cover: "/images/projects/Ebook_Clicksite/Clicksite_cover.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_coma_trabalhar",
+    title: "Ebook_Coma trabalhar",
+    slug: "ebook_coma_trabalhar",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_Coma trabalhar/Comatrabalhar_cover.jpg",
+    cover: "/images/projects/Ebook_Coma trabalhar/Comatrabalhar_cover.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_dynamic_layout",
+    title: "Ebook_Dynamic Layout",
+    slug: "ebook_dynamic_layout",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_Dynamic Layout/Ebook_Dynamic Layout.jpg",
+    cover: "/images/projects/Ebook_Dynamic Layout/Ebook_Dynamic Layout.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_edxchange",
+    title: "Ebook_EDXchange",
+    slug: "ebook_edxchange",
+    category: "Ebook",
+    thumbnail: "/images/projects/ebook/ebook_edxchange_thumb.png",
+    cover: "/images/projects/ebook/ebook_edxchange_cover.png",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_fashion_trends",
+    title: "Ebook_Fashion trends",
+    slug: "ebook_fashion_trends",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_EDXchange/Ebook_EDXchange.jpg",
+    cover: "/images/projects/Ebook_EDXchange/Ebook_EDXchange.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_gocanopy",
+    title: "Ebook_GoCanopy",
+    slug: "ebook_gocanopy",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_Fashion trends/Ebook_Fashion trends.jpg",
+    cover: "/images/projects/Ebook_Fashion trends/Ebook_Fashion trends.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_guia_para_novos_alunos",
+    title: "Ebook_Guia para novos alunos",
+    slug: "ebook_guia_para_novos_alunos",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_GoCanopy/Ebook_GoCanopy.jpg",
+    cover: "/images/projects/Ebook_GoCanopy/Ebook_GoCanopy.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_mercado_de_vistoria_veicular",
+    title: "Ebook_Mercado de vistoria veicular",
+    slug: "ebook_mercado_de_vistoria_veicular",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_Guia para novos alunos/Ebook_Guia para novos alunos.jpg",
+    cover: "/images/projects/Ebook_Guia para novos alunos/Ebook_Guia para novos alunos.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_nrf",
+    title: "Ebook_NRF",
+    slug: "ebook_nrf",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_Mercado de vistoria veicular/Ebook_Mercado de vistoria veicular.jpg",
+    cover: "/images/projects/Ebook_Mercado de vistoria veicular/Ebook_Mercado de vistoria veicular.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_quem",
+    title: "Ebook_Quem",
+    slug: "ebook_quem",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_NRF/Ebook_NRF.jpg",
+    cover: "/images/projects/Ebook_NRF/Ebook_NRF.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_recalculando_arota_amcrosa",
+    title: "Ebook_recalculando arota amcrosa",
+    slug: "ebook_recalculando_arota_amcrosa",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_Quem/Ebook_Quem.jpg",
+    cover: "/images/projects/Ebook_Quem/Ebook_Quem.jpg",
+    color: "#FFFFFF"
+  },
+  {
+    id: "ebook_sonovate",
+    title: "Ebook_Sonovate",
+    slug: "ebook_sonovate",
+    category: "Ebook",
+    thumbnail: "/images/projects/Ebook_recalculando arota amcrosa/Ebook_recalculando arota amcrosa.jpg",
+    cover: "/images/projects/Ebook_recalculando arota amcrosa/Ebook_recalculando arota amcrosa.jpg",
+    color: "#FFFFFF"
+  }
 ]
 
   export const caseStudies: CaseStudy[] = [

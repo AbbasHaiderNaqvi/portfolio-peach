@@ -761,7 +761,7 @@ function ServicesSection() {
     },
     {
       title: 'E-Book Design',
-      link: null,
+      link: '/portfolios/ebook',
       desc: 'Beautifully structured e-books and digital publications that are as readable as they are stunning.',
       icon: '◉',
       n: '03',
@@ -782,7 +782,7 @@ function ServicesSection() {
     },
     {
       title: 'Apparel Graphics',
-      link: null,
+      link: '/portfolios/apparel-design',
       desc: 'Bold, print-ready graphics for t-shirts, merch and branded apparel.',
       icon: '◈',
       n: '06',
